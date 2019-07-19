@@ -3,52 +3,33 @@ import axios from 'axios';
 import StarWarsCard from './Card';
 
 function CardGrid() {
-	const [ cardData, setCardData ] = useState([]);
-	// const [ cardName, setCardName ] = useState();
-	// const [ cardHeight, setCardHeight ] = useState();
-	// const [ cardMass, setCardMass ] = useState();
-	// const [ cardHairColor, setCardHairColor ] = useState();
-	// const [ cardSkinColor, setCardSkinColor ] = useState();
-	// const [ cardEyeColor, setCardEyeColor ] = useState();
-	// const [ cardBirthYear, setCardBirthYear ] = useState();
-	// const [ cardGender, setCardGender ] = useState();
-
+	//keep naming conventions simple.
+	const [ data, setData ] = useState([]);
 	useEffect(() => {
 		axios.get('https://henry-mock-swapi.herokuapp.com/api').then((res) => {
-			const data = res.data.results;
-			console.log('RETURN', data);
-			setCardData(cardData.push(res.data.results));
-			console.log('card', cardData);
-			// setCardName(data.name);
-			// setCardHeight(data.height);
-			// setCardMass(data.mass);
-			// setCardHairColor(data.hair_color);
-			// setCardSkinColor(data.skin_color);
-			// setCardEyeColor(data.eye_color);
-			// setCardBirthYear(data.birth_year);
-			// setCardGender(data.gender);
+			setData(res.data.results);
 		});
 	}, []);
 
-	// return cardData.map((api) => {
 	return (
+		// don't forget to pay attention to divs and the overall formatting of your return.
+		// always add curly braces before you write javascript in JSX
 		<div>
-			<ul>
+			{data.map((char) => (
 				<StarWarsCard
-					key={cardData.name}
-					name={cardData.name}
-					height={cardData.height}
-					mass={cardData.mass}
-					hairColor={cardData.hair_color}
-					skinColor={cardData.skin_color}
-					eyeColor={cardData.eye_color}
-					birthYear={cardData.birth_year}
-					gender={cardData.gender}
+					key={char.name}
+					name={char.name}
+					height={char.height}
+					mass={char.mass}
+					hairColor={char.hair_color}
+					skinColor={char.skin_color}
+					eyeColor={char.eye_color}
+					birthYear={char.birth_year}
+					gender={char.gender}
 				/>
-			</ul>
+			))}
 		</div>
 	);
-	// });
 }
 
 export default CardGrid;

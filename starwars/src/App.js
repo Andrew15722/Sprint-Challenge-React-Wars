@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import CardGrid from './components/CardGrid';
+import CardGrid from './components/CardGrid.js';
 
 const App = () => {
 	// Try to think through what state you'll need for this app before starting. Then build out

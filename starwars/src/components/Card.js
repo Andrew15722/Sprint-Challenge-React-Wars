@@ -4,7 +4,7 @@ import 'semantic-ui-css/semantic.min.css';
 
 function StarWarsCard({ name, height, mass, hairColor, skinColor, eyeColor, birthYear, gender }) {
 	return (
-		<Card.Group itemsPerRow={1}>
+		<Card.Group itemsPerRow={4}>
 			<Card>
 				<ul>
 					<li className="card-li">{name}</li>
@@ -17,13 +17,6 @@ function StarWarsCard({ name, height, mass, hairColor, skinColor, eyeColor, birt
 					<li className="card-li">{gender}</li>
 				</ul>
 			</Card>
-			{/* <Card  />
-        <Card  />
-        <Card  />
-        <Card  />
-        <Card   />
-        <Card  />
-        <Card  /> */}
 		</Card.Group>
 	);
 }
