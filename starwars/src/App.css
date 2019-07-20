@@ -1,8 +1,39 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 .Header {
-  color: #443e3e;
-  text-shadow: 1px 1px 5px #fff;
+	color: #443e3e;
+	text-shadow: 1px 1px 5px #fff;
 }
 /* write your parent styles in here for your App.js */
+.App {
+	background-image: url('./sw-bg.jpg');
+	background-size: cover;
+}
+
+.Header {
+	font-size: 50px;
+}
+
+.App .ui.three.cards {
+	width: 66.6%;
+	margin: 0 auto;
+}
+
+.App .ui.three.cards .ui.card {
+	height: 300px;
+	background: rgba(183, 65, 14, 0.4);
+}
+
+.App .ui.three.cards .ui.card ul {
+	list-style-type: none;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+}
+
+.card-li {
+	font-size: 30px;
+	line-height: 35px;
+	color: rgb(238, 235, 235);
+}
